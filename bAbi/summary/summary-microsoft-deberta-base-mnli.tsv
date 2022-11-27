@@ -1,0 +1,4 @@
+reasoning_type	num_tests	acc_wo_partial_credit	acc_w_partial_credit	stdev_acc_w_partial_credit
+motion	3	0.0	0.49652777777777773	0.35252255965259105
+orientation	8	0.0	0.591980949280754	0.40307812595735976
+containment	16	0.125	0.4829764660493827	0.41173621702674834
