@@ -9,7 +9,7 @@ python3 -m pip install -r requirements.txt
 ## Usage
 
 ```bash
-# locate to file
+# change directory to file
 cd Spatial-Reasoners-Ver2.0/Basic
 # or
 cd Spatial-Reasoners-Ver2.0/bAbi
