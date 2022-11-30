@@ -1,11 +1,11 @@
 reasoning_type	fn_name	test_id	num_tests	num_correct	test_acc
-motion	two_motion_two_hop_jerund	0	2592	2253	0.8692129629629629
-motion	two_motion_two_hop_jerund	1	2592	2294	0.8850308641975309
+motion	two_motion_two_hop_jerund	0	2592	2282	0.8804012345679012
+motion	two_motion_two_hop_jerund	1	2592	2301	0.8877314814814815
 motion	two_motion_two_hop_jerund	2	2592	0	0.0
-orientation	above_below_one_hop	0	1536	10	0.006510416666666667
+orientation	above_below_one_hop	0	1536	32	0.020833333333333332
 orientation	above_below_one_hop	1	1536	1536	1.0
-orientation	cardinals_one_hop	0	1344	37	0.027529761904761904
-orientation	cardinals_one_hop	1	3072	2908	0.9466145833333334
+orientation	cardinals_one_hop	0	1344	27	0.020089285714285716
+orientation	cardinals_one_hop	1	3072	2942	0.9576822916666666
 orientation	front_back_one_hop	0	1536	0	0.0
 orientation	front_back_one_hop	1	1536	1536	1.0
 orientation	left_right_one_hop	0	1152	0	0.0

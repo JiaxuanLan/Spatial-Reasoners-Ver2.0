@@ -1,7 +1,7 @@
 reasoning_type	fn_name	test_id	num_tests	num_correct	test_acc
 motion	two_motion_two_hop_jerund	0	2592	2592	1.0
 motion	two_motion_two_hop_jerund	1	2592	0	0.0
-motion	two_motion_two_hop_jerund	2	2592	2	0.0007716049382716049
+motion	two_motion_two_hop_jerund	2	2592	0	0.0
 orientation	above_below_one_hop	0	1536	1536	1.0
 orientation	above_below_one_hop	1	1536	0	0.0
 orientation	cardinals_one_hop	0	1344	1344	1.0

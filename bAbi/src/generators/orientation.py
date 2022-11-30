@@ -50,7 +50,7 @@ class OrientationGenerator(BaseGenerator):
                 # Case when cardinal are the same, eg north and north
                 if cardinal_1 == cardinal_2:
                     # Generate premise for the case
-                    premise = f"The {loc_1} is {cardinal_1} of the {loc_2} and the {loc_2} is {cardinal_2} of the {loc_3}"
+                    premise = f"The {loc_1} is {cardinal_1} of the {loc_2}. The {loc_2} is {cardinal_2} of the {loc_3}"
 
                     # Generate entailment cases
                     hypothesis_1 = f"The {loc_1} is {cardinal_1} of the {loc_3}."
@@ -78,7 +78,7 @@ class OrientationGenerator(BaseGenerator):
                     loc_1_to_loc_3 = []
                     loc_3_to_loc_1 = []
                     # Generate premise for the case
-                    premise = f"The {loc_1} is {cardinal_1} of the {loc_2} and the {loc_2} is {cardinal_2} of the {loc_3}"
+                    premise = f"The {loc_1} is {cardinal_1} of the {loc_2}. The {loc_2} is {cardinal_2} of the {loc_3}"
                     
                     # Generate entailment cases
                     hypothesis_3 = f"The {loc_1} is {cardinal_1} of the {loc_3}."
@@ -155,7 +155,7 @@ class OrientationGenerator(BaseGenerator):
         for dir_rels in [self.left_phrases, self.right_phrases]:
             for obj_1, dir_1, obj_2, dir_2, obj_3 in product(self.objects, dir_rels, self.objects, dir_rels, self.objects):
                 if obj_1 != obj_2 and obj_2 != obj_3 and obj_1 != obj_3:
-                    premise = f"The {obj_1} is {dir_1} the {obj_2} and {obj_2} is {dir_2} the {obj_3}."
+                    premise = f"The {obj_1} is {dir_1} the {obj_2}. The {obj_2} is {dir_2} the {obj_3}."
                     for rev_dir_1, rev_dir_2 in product(self.opposite_directions(dir_1), self.opposite_directions(dir_2)):
                         if rev_dir_1 != rev_dir_2:
                             yield (premise, f"The {obj_1} is {rev_dir_1} the {obj_3}.", self.CONTRADICTION, 1)
@@ -172,7 +172,7 @@ class OrientationGenerator(BaseGenerator):
         for dir_rels in [self.above_phrases, self.below_phrases]:
             for obj_1, dir_1, obj_2, dir_2, obj_3 in product(self.objects, dir_rels, self.objects, dir_rels, self.objects):
                 if obj_1 != obj_2 and obj_2 != obj_3 and obj_1 != obj_3:
-                    premise = f"The {obj_1} is {dir_1} the {obj_2} and {obj_2} is {dir_2} the {obj_3}."
+                    premise = f"The {obj_1} is {dir_1} the {obj_2}. The {obj_2} is {dir_2} the {obj_3}."
                     for rev_dir_1, rev_dir_2 in product(self.opposite_directions(dir_1), self.opposite_directions(dir_2)):
                         yield (premise, f"The {obj_1} is {rev_dir_1} the {obj_3}.", self.CONTRADICTION, 1)
                         yield (premise, f"The {obj_3} is {rev_dir_2} the {obj_1}.", self.ENTAILMENT, 0)
@@ -186,7 +186,7 @@ class OrientationGenerator(BaseGenerator):
         for dir_rels in [self.front_phrases, self.back_phrases]:
             for obj_1, dir_1, obj_2, dir_2, obj_3 in product(self.objects, dir_rels, self.objects, dir_rels, self.objects):
                 if obj_1 != obj_2 and obj_2 != obj_3 and obj_1 != obj_3:
-                    premise = f"The {obj_1} is {dir_1} the {obj_2} and {obj_2} is {dir_2} the {obj_3}."
+                    premise = f"The {obj_1} is {dir_1} the {obj_2}. The {obj_2} is {dir_2} the {obj_3}."
                     for rev_dir_1, rev_dir_2 in product(self.opposite_directions(dir_1), self.opposite_directions(dir_2)):
                         yield (premise, f"The {obj_1} is {rev_dir_1} the {obj_3}.", self.CONTRADICTION, 1)
                         yield (premise, f"The {obj_3} is {rev_dir_2} the {obj_1}.", self.ENTAILMENT, 0)

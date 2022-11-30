@@ -2,6 +2,7 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration, AutoModelForCa
 import torch
 import os
 import openai
+import backoff
 from utils import gpt_prompt_template, unifiedqa_MC_template, tfn_decode, transform_gpt3_model_name
 
 
@@ -91,6 +92,7 @@ def get_gpt3(model_name):
         transform_x = lambda x: gpt_prompt_template.format(premise=x[0], hypothesis=x[1])
         return [transform_x(x) for x in batch_x]
     
+    @backoff.on_exception(backoff.expo, openai.error.RateLimitError)
     def gpt3_run_model(inputs):
         response = openai.Completion.create(
             engine=api_model_name,

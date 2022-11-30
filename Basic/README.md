@@ -78,10 +78,10 @@ cd /scratch/<NetID>/pytorch-example
 ls /scratch/work/public/overlay-fs-ext3
 
 # choose your overlay and copy it to folder
-cp -rp /scratch/work/public/overlay-fs-ext3/overlay-50GB-10M.ext3.gz .
+cp -rp /scratch/work/public/overlay-fs-ext3/overlay-50G-10M.ext3.gz .
 
 # unzip the file
-gunzip overlay-50GB-10M.ext3.gz
+gunzip overlay-50G-10M.ext3.gz
 
 # Choose a corresponding Singularity image
 /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif
