@@ -94,10 +94,26 @@ singularity exec --nv\
 ### On Singularity
 
 ```bash
-# Run to start environment
+# Run to download miniconda
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# Run to install miniconda to /ext3/miniconda3
+sh Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
+
+# copy following into /ext3/env.sh
+'#!/bin/bash
+
+source /ext3/miniconda3/etc/profile.d/conda.sh
+export PATH=/ext3/miniconda3/bin:$PATH
+export PYTHONPATH=/ext3/miniconda3/bin:$PATH'
+
+# Activate conda environment
 source /ext3/env.sh
-conda activate base
-export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+
+#Update and install packages
+conda update -n base
+conda -y
+conda clean --all –yes
+conda install pipconda install ipykernel
 
 # install necessay packages
 ```
