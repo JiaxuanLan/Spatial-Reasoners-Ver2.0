@@ -44,7 +44,3 @@ python scripts/make_figures.py analysis/df_analysis.csv summary/df_summary.csv
 `make_dataframes.py` outputs a dataframe of combined analysis results to `analysis/df_analysis.csv` and a dataframe of combined summary results to `summary/df_summary.csv` 
 
 `make_figures.py` output the figures to `figures`
-
-## TODO
-
-* Refactor generation to make it simpler and more scalable
