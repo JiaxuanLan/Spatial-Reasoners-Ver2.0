@@ -286,7 +286,7 @@ def make_figure_summary(df_path, output_dir):
                     height=6, legend_out=True, aspect = 2
                     )
     plt_4.despine(left=True)
-    plt_4.set_axis_labels("Models", "Accuracy w/o partial credit")
+    plt_4.set_axis_labels("Models", "Accuracy w/ partial credit")
     plt_4.set(ylim=(0, 1))
     plt_4.set_xticklabels(rotation=10, fontsize=20)
     plt_4.legend.set_title("Reasoning type")
